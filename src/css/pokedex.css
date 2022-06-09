@@ -1,0 +1,309 @@
+/* WELCOME POKEDEX */
+.main {
+    margin-top: 8.2rem;
+    min-height: calc(100vh - 18rem);
+    background-color: var(--fondo-body);
+    color: var(--texto);
+}
+.main h2 {
+    text-align: center;
+    padding: 2rem 0;
+}
+.main h2 span {
+    color: var(--boton);
+    text-transform: capitalize;
+    transition: .8s;
+}
+@media (min-width: 768px) {
+    .main {
+        min-height: calc(100vh - 16rem);
+    }
+    .main h2 {
+        font-size: 2.6rem;
+    }
+}
+
+/* ORDER BOX */
+.order-box {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .order-box {
+        gap: 3rem;
+    }
+}
+.order-box-form {
+    max-width: 40vw;
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    color: var(--negro);
+    text-transform: capitalize;
+    background-color: var(--blanco);
+    border: .2rem solid var(--boton);
+    transition: .8s;
+}
+.order-box-form:focus {
+    border: .2rem solid var(--boton-hover);
+    outline: none;
+}
+@media (min-width: 768px) {
+    .order-box-form {
+        width: 22rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* POKEBALL LOADING */
+.pokeball-loading {
+    filter: brightness(75%);
+    display: block;
+    margin: 5rem auto;
+    width: 15rem;
+    animation: rotatePokeBall ease-in-out 2s infinite;
+}
+@keyframes rotatePokeBall {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@media (min-width: 768px) {
+    .pokeball-loading {
+        opacity: .85;
+    }
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    padding: 3rem 0;
+}
+.card {
+    min-height: 15rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    padding: 2.4rem;
+    background-color: var(--bubble-text);
+    border-radius: 2rem;
+    box-shadow: var(--sombra);
+    transition: .8s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.card:hover {
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.04);
+    transition: transform .3s ease;
+}
+.card:hover img {
+    z-index: -1;
+    transform: scale(1.04);
+    transition: transform .3s ease;
+}
+.card img {
+    display: block;
+    margin: 0 auto;
+}
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(60% + 3rem);
+    background-color: var(--bubble);
+    transition: transform .4s .2s ease-in;
+}
+.card::before {
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+    transform: translateY(-100%);
+}
+.card::after {
+    bottom: 0;
+    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+    transform: translateY(100%);
+}
+.card-content {
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: var(--bubble-text);
+}
+.card:hover::before,
+.card:hover::after {
+    transform: translateY(0);
+}
+.card:hover .card-content {
+    opacity: 1;
+    transition-delay: .65s;
+}
+.card-content span {
+    font-size: 1.6rem;
+}
+.card-content h2 {
+    text-transform: capitalize;
+    padding: 1rem 0;
+    font-size: 2.2rem;
+}
+.card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-types {
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+.extra {
+    background-color: var(--bubble-extra);
+}
+/* .card-content {
+width: 100%;
+padding: 2rem;
+background-color: var(--bubble);
+border-radius: 2rem;
+}
+@media (min-width: 768px) {
+    .card-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(5rem);
+    transition: transform .3s;
+    }
+}
+.card-title {
+color: var(--bubble-text);
+line-height: 1.5rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+gap: .5rem;
+padding: 0;
+}
+@media (min-width: 768px) {
+    .card-title {
+    flex-direction: row;
+    align-items: baseline;
+    padding: 2rem 0;
+    }
+}
+.card-title h2 {
+font-size: 2.2rem;
+text-transform: capitalize;
+padding: 0;
+}
+.card-title span {
+font-size: 1.4rem;
+}
+.card-subtitle {
+display: block;
+font-size: 1.2rem;
+margin-bottom: 1rem;
+}
+.card-desc {
+font-size: 1.4rem;
+opacity: 0;
+transition: opacity .5s;
+}
+.card:hover .card-content {
+transform: translateY(0);
+}
+.card:hover .card-desc {
+opacity: 1;
+transition-delay: .25s;
+} */
+
+/*  GO TOP */
+.gotop-button {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--boton);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    z-index: -1;
+    transform: scale(0);
+    transition: .4s;
+    transition: .8s;
+}
+.gotop-button:hover {
+    cursor: pointer;
+    background-color: var(--boton-hover);
+}
+.gotop-button i {
+    margin-bottom: .8rem;
+    color: var(--fondo-body);
+    transition: .8s;
+}
+.gotop-visible {
+    z-index: 3;
+    transform: scale(1);
+    transition: .4s;
+}
+
+/* PAGINATE */
+.pag-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0 0 2rem 0;
+}
+.pag-buttons li {
+    list-style: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--boton);
+    background-color: var(--bubble-text);
+    box-shadow: var(--sombra);
+    border-radius: .5rem;
+    margin: .5rem;
+    padding: .5rem 0;
+    cursor: pointer;
+    transition: .8s;
+}
+.pag-buttons li a {
+    padding: 1rem 2rem;
+}
+.pag-buttons .pag-disabled {
+    box-shadow: none;
+}
+.pag-disabled a {
+    opacity: .5;
+    border-radius: .5rem;
+    cursor: default;
+}
+.pag-active a,
+.pag-buttons li:hover {
+    border-radius: .5rem;
+    background-color: var(--boton);
+    color: var(--bubble-text);
+    box-shadow: var(--sombra-hover);
+    transition: .8s;
+}
+.pag-buttons .pag-disabled:hover {
+    box-shadow: none;
+    background-color: var(--bubble-text);
+    color: var(--boton);
+}

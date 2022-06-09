@@ -1,0 +1,137 @@
+.pokemon-data {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .pokemon-data {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+}
+.info-left {
+    margin-right: 2rem;
+}
+.pokemon-img {
+    max-height: 30vh;
+    max-width: 30vh;
+    background-color: var(--bubble-text);
+    box-shadow: var(--sombra-hover);
+    border-radius: 50%;
+    padding: 2rem;
+    display: block;
+    margin: auto;
+    transition: .8s;
+}
+.pokemon-types {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.pokemon-type {
+    max-height: 8vh;
+    max-width: 8vh;
+    background-color: var(--bubble-text);
+    box-shadow: var(--sombra-hover);
+    border-radius: 50%;
+    transition: .8s;
+}
+.info-left h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+.pokemon-size {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--bubble-text);
+    box-shadow: var(--sombra);
+    border-radius: 1.5rem;
+    text-transform: capitalize;
+}
+.pokemon-size h3 span {
+    color: var(--boton);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.pokemon-size ul {
+    margin: 0;
+    font-size: 1.6rem;
+}
+.pokemon-size progress {
+    height: 1.6rem;
+    width: 100%;
+}
+.pokemon-info-title {
+    color: var(--boton);
+    font-weight: bold;
+}
+.info-right, .info-right a {
+    display: flex;
+    align-items: center;
+}
+.info-right a {
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .info-right, .info-right a {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+}
+.info-right a {
+    margin-bottom: 2rem;
+    background-color: var(--bubble-text);
+    box-shadow: var(--sombra);
+    padding: 2rem;
+    width: 18rem;
+    max-height: 25vh;
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+    color: var(--texto);
+    transition: .8s;
+}
+.info-right a:first-of-type {
+    margin-right: 2rem;
+}
+@media (min-width: 786px) {
+    .info-right a {
+        align-items: center;
+        margin: 0 0 2rem 2rem;
+    }
+    .info-right a:first-of-type {
+        margin-right: 0rem;
+    }
+}
+.info-right a h4 {
+    font-weight: bold;
+}
+.info-right a:hover {
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+    transition: .3s;
+}
+.load-text {
+    padding: 2rem 0;
+    text-align: center;
+}
+.loading h4 {
+    margin: 1rem 0 2rem 0;
+}
+.loading span {
+    font-weight: bold;
+}
+.loading li {
+    font-size: 1.6rem;
+}
+.home-link {
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+.home-link h3 {
+    color: var(--boton);
+    text-decoration: underline;
+}
