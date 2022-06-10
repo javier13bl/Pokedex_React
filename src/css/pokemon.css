@@ -70,6 +70,7 @@
 .info-right, .info-right a {
     display: flex;
     align-items: center;
+    min-height: 16rem;
 }
 .info-right a {
     flex-direction: column;

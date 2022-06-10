@@ -24,50 +24,50 @@ const Layout = ({darkMode, setDarkMode, darkClass}) => {
   return (
     <>
       <header className={`header ${darkClass}`}>
-          <div className='contenedor barra'>
-              <div className='barra-uno'>
-                  <Link to='/pokedex'>
-                      <img src={pokelogo} alt='Pokemon logo' title='Home link'/>
-                  </Link>
-                  <button
-                      className='hamburger-menu'
-                      type='button'
-                      onClick={() => setMenuDisplay(!menuDisplay)}
-                  >
-                      <i className={menuDisplay ? 'fa fa-bars fa-4x' : 'fa fa-times fa-4x'}></i>
-                  </button>
-              </div>{/* BARRA UNO */}
-              <div className={menuDisplay ? 'barra-dos menu-display' : 'barra-dos'}>
-                  <form onSubmit={handleSubmit}>
-                      <input
-                          type='text'
-                          placeholder='Search your Pokemon'
-                          value={idPokemon}
-                          onChange={e => setIdPokemon(e.target.value)}
-                          className='nombre-form'
-                      />
-                      <button 
-                          type='submit'
-                          className='boton-form'
-                          title='Search button'
-                      >
-                          <i className='fa fa-search'></i>
-                      </button>
-                  </form>
-                  <button
-                    type='button'
-                    title='Dark-Mode button'
-                    className='modo-oscuro'
-                    onClick={() => setDarkMode(!darkMode)}
-                  >
-                      <p>{darkClass}</p>
-                      <img 
-                          src={darkIcon} 
-                          alt='Night mode' 
-                      />
-                  </button>
-              </div>{/* BARRA DOS */}
-          </div>
+        <div className='contenedor barra'>
+          <div className='barra-uno'>
+            <Link to='/pokedex'>
+              <img src={pokelogo} alt='Pokemon logo' title='Home link'/>
+            </Link>
+            <button
+              className='hamburger-menu'
+              type='button'
+              onClick={() => setMenuDisplay(!menuDisplay)}
+            >
+              <i className={menuDisplay ? 'fa fa-bars fa-4x' : 'fa fa-times fa-4x'}></i>
+            </button>
+          </div>{/* BARRA UNO */}
+          <div className={menuDisplay ? 'barra-dos menu-display' : 'barra-dos'}>
+            <form onSubmit={handleSubmit}>
+              <input
+                type='text'
+                placeholder='Search your Pokemon'
+                value={idPokemon}
+                onChange={e => setIdPokemon(e.target.value)}
+                className='nombre-form'
+              />
+              <button 
+                type='submit'
+                className='boton-form'
+                title='Search button'
+              >
+                <i className='fa fa-search'></i>
+              </button>
+            </form>
+            <button
+              type='button'
+              title='Dark-Mode button'
+              className='modo-oscuro'
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              <p>{darkClass}</p>
+              <img 
+                src={darkIcon} 
+                alt='Night mode' 
+              />
+            </button>
+          </div>{/* BARRA DOS */}
+        </div>
       </header>
       <Outlet />
       <footer className={`footer ${darkClass}`}>

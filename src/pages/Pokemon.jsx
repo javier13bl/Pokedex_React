@@ -2,8 +2,30 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import GoTop from '../components/GoTop';
 import Loading from '../components/Loading';
+import bug from '../img/types/bug.png'
+import dark from '../img/types/dark.png'
+import dragon from '../img/types/dragon.png'
+import electric from '../img/types/electric.png'
+import fairy from '../img/types/fairy.png'
+import fighting from '../img/types/fighting.png'
+import fire from '../img/types/fire.png'
+import flying from '../img/types/flying.png'
+import ghost from '../img/types/ghost.png'
+import grass from '../img/types/grass.png'
+import ground from '../img/types/ground.png'
+import ice from '../img/types/ice.png'
+import normal from '../img/types/normal.png'
+import poison from '../img/types/poison.png'
+import psychic from '../img/types/psychic.png'
+import rock from '../img/types/rock.png'
+import steel from '../img/types/steel.png'
+import water from '../img/types/water.png'
 
 const Pokemon = ({darkClass}) => {
+    const typeIcons = [bug, dark, dragon, electric, fairy, fighting, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water]
+    // typeIcons.map((yuca) => { console.log(yuca); })
+    const x = typeIcons.filter((yuca) => { return yuca === '/src/img/types/bug.png' })
+    console.log(x[0]);
     const {idName} = useParams()
     const [cargando, setCargando] = useState(true);
     const [pokemon, setPokemon] = useState([]);
@@ -48,7 +70,7 @@ const Pokemon = ({darkClass}) => {
                         <div className='pokemon-types'>
                             {types.map((tipo) => (
                                 <img
-                                    src={`/src/img/types/${tipo.type.name}.png`}
+                                    src={typeIcons.filter((yuca) => { return yuca === `/src/img/types/${tipo.type.name}.png`})[0]}
                                     alt={`Icon type ${tipo.type.name}`}
                                     title={`Type ${tipo.type.name} icon`}
                                     key={tipo.slot}
