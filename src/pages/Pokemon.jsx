@@ -22,10 +22,6 @@ import steel from '../img/types/steel.png'
 import water from '../img/types/water.png'
 
 const Pokemon = ({darkClass}) => {
-    const typeIcons = [bug, dark, dragon, electric, fairy, fighting, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water]
-    // typeIcons.map((yuca) => { console.log(yuca); })
-    const x = typeIcons.filter((yuca) => { return yuca === '/src/img/types/bug.png' })
-    console.log(x[0]);
     const {idName} = useParams()
     const [cargando, setCargando] = useState(true);
     const [pokemon, setPokemon] = useState([]);
@@ -70,7 +66,24 @@ const Pokemon = ({darkClass}) => {
                         <div className='pokemon-types'>
                             {types.map((tipo) => (
                                 <img
-                                    src={typeIcons.filter((yuca) => { return yuca === `/src/img/types/${tipo.type.name}.png`})[0]}
+                                    src={tipo.type.name === 'bug' ? bug :
+                                        tipo.type.name === 'dark' ? dark :
+                                        tipo.type.name === 'dragon' ? dragon :
+                                        tipo.type.name === 'electric' ? electric :
+                                        tipo.type.name === 'fairy' ? fairy :
+                                        tipo.type.name === 'fighting' ? fighting :
+                                        tipo.type.name === 'fire' ? fire :
+                                        tipo.type.name === 'flying' ? flying :
+                                        tipo.type.name === 'ghost' ? ghost :
+                                        tipo.type.name === 'grass' ? grass :
+                                        tipo.type.name === 'ground' ? ground :
+                                        tipo.type.name === 'ice' ? ice :
+                                        tipo.type.name === 'normal' ? normal :
+                                        tipo.type.name === 'poison' ? poison :
+                                        tipo.type.name === 'psychic' ? psychic :
+                                        tipo.type.name === 'rock' ? rock :
+                                        tipo.type.name === 'steel' ? steel :
+                                        tipo.type.name === 'water' ? water : ''}
                                     alt={`Icon type ${tipo.type.name}`}
                                     title={`Type ${tipo.type.name} icon`}
                                     key={tipo.slot}
