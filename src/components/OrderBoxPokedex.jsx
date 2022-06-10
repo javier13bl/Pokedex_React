@@ -28,7 +28,7 @@ const OrderBoxPokedex = ({viewType, setViewType, viewSize, setViewSize}) => {
                 onChange={e => setViewType(e.target.value)}
                 className='order-box-form'
             >
-                <option value={''}>Pokémon by type</option>
+                <option value={''}>By type</option>
                 {typesList.map(opcion => (
                     <option
                         key={opcion.typeUrl}

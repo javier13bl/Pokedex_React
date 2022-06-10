@@ -2,7 +2,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 :root {
-    --fuente-principal: 'Anybody', cursive;
+    --fuente-principal: 'Anybody', sans-serif;
     --morado: #8a2be2;
     --morado-oscuro: #550E96;
     --naranja: #fa1469;
@@ -234,6 +234,7 @@ img {
 }
 .barra-dos form {
     display: flex;
+    width: 30rem;
 }
 .barra-dos .nombre-form {
     color: var(--morado-oscuro);
